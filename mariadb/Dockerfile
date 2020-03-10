@@ -6,7 +6,6 @@ ENV MYSQL_ROOT_PASSWORD=hguyFtgfR4r9R4r76
 RUN apk update && apk upgrade
 RUN apk add mariadb mariadb-client mariadb-server-utils openrc
 ADD run.sh /scripts/run.sh
-COPY wp-config.php /code/wp-config.php 
 RUN mkdir /docker-entrypoint-initdb.d && \
     mkdir /scripts/pre-exec.d && \
     mkdir /scripts/pre-init.d && \
