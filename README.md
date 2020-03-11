@@ -11,7 +11,7 @@ create containers:
   - docker run --name [container-name] -d -p 9000:9000 --network crm-net --mount type=bind,source=$(pwd)/wordpress-exercise containers/wordpress,target=/www [php-fpm-image]:[tag]
   
 - [nginx]
-  - docker run --name [container-name] -d -p 8080:80 --network crm-net --mount type=bind,source=$(pwd)/nginx/espocrm.conf,target=/etc/nginx/conf.d/default.conf --mount type=bind,source=$(pwd)/wordpress,target=/www [nginx-image]:[tag]
+  - docker run --name [container-name] -d -p 8080:80 --network crm-net --mount type=bind,source=$(pwd)/nginx/wordpress.conf,target=/etc/nginx/conf.d/default.conf --mount type=bind,source=$(pwd)/wordpress,target=/www [nginx-image]:[tag]
 
 For Wordpress database connection use same variables from "mariadb/Dockerfile".
 
